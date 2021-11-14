@@ -1,3 +1,6 @@
+
+// models
+
 const express = require('express');
 const debug = require('debug')('app:main');
 
@@ -7,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-// models
+console.log("Puerto: "+Config.port);
 
 app.listen(Config.port, () => {
     debug('Servidor escuchando en el puerto '+ Config.port);
