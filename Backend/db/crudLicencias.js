@@ -21,7 +21,7 @@ function getLicencias(callback) {
           callback(arrayLicencias);
       })
       .catch(err => {
-          callback(`Error to get licences ${err}`);
+          callback(`Error to get licenses ${err}`);
       })
 }
 
@@ -31,7 +31,7 @@ function getLicencia(lid, callback) {
           callback(doc.data())
       })
       .catch((err) => {
-          callback(`Error to get licence ${err}`);
+          callback(`Error to get license ${err}`);
       })
 }
 
