@@ -1,16 +1,16 @@
 const db = require('./Conection.js');
 
-db.collection("Licencia").get()
-  .then((DocArray) => {
-    DocArray.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
-    });
-  })
-  .catch((error) => {
-    console.log("Error getting documents: ", error);
-  });
+// db.collection("Licencia").get()
+//   .then((DocArray) => {
+//     DocArray.forEach((doc) => {
+//       console.log(doc.id, " => ", doc.data());
+//     });
+//   })
+//   .catch((error) => {
+//     console.log("Error getting documents: ", error);
+//   });
 
-//Get all users from experts collection
+//Get all licences from licence collection
 function getLicencias(callback) {
   return db.collection('Licencia').get()
       .then((refDoc) => {
