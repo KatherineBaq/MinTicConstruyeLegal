@@ -4,15 +4,12 @@
 const express = require('express');
 const debug = require('debug')('app:main');
 
-const { Config } = require('./config/index.js');
-
 const app = express();
 
 app.use(express.json());
 
-console.log("Puerto: "+Config.port);
+app.use('/api/v1/', require('./routes/LicenciasRouter.js'));
 
-app.listen(Config.port, () => {
-    debug('Servidor escuchando en el puerto '+ Config.port);
-
+app.listen(3000, () => {
+    debug('Servidor escuchando en el puerto 3000');
 });
