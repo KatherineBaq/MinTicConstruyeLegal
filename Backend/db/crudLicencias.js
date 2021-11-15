@@ -105,23 +105,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                     callback(`Error to get licenses ${err}`);
                 });
         }
-<<<<<<< HEAD
         
-=======
-        if (tipo == "noacto") {
-            return db.collection('License').where('noacto', '==', tipo).get()
-                .then((refDoc) => {
-                    var arrayLicencias = [];
-                    refDoc.forEach((doc) => {
-                        arrayLicencias.push(doc.data());
-                    });
-                    callback(arrayLicencias);
-                })
-                .catch(err => {
-                    callback(`Error to get licenses ${err}`);
-                });
-        }
->>>>>>> 3214ebacc352e1897fce941050a1bdad12aa0b23
         if (tipo == "barrio_urb") {
             return db.collection('License').where('barrio_urb', '==', tipo).get()
                 .then((refDoc) => {
