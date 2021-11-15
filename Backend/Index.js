@@ -1,15 +1,15 @@
-
-// models
-
 const express = require('express');
 const debug = require('debug')('app:main');
-
+const APIRoutes = require('./Routes/indexRoutes.js');
 const app = express();
+const port = 3000;
 
+app.use(express.static('public'));
 app.use(express.json());
+APIRoutes(app);
 
-app.use('/api/v1/', require('./routes/LicenciasRouter.js'));
+//app.use('/api/v1/', require('./routes/LicenciasRouter.js'));
 
-app.listen(3000, () => {
-    debug('Servidor escuchando en el puerto 3000');
+app.listen(port, () => {
+    console.log('My port ' + port);
 });

@@ -4,11 +4,11 @@ const db = require('./Conection.js');
 function getAdministradores(callback) {
     return db.collection('Administrador').get()
         .then((refDoc) => {
-            var arrayLicencias = [];
+            var arrayAdministradores = [];
             refDoc.forEach((doc) => {
-                arrayLicencias.push(doc.data());
+                arrayAdministradores.push(doc.data());
             })
-            callback(arrayLicencias);
+            callback(arrayAdministradores);
         })
         .catch(err => {
             callback(`Error to get Admins ${err}`);

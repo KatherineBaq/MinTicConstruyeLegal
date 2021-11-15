@@ -1,10 +1,15 @@
 const express = require('express');
 const router = express.Router();
+<<<<<<< HEAD
 const { getLicenciasByQuery } = require('../db/crudLicencias');
 //const dbL = require('../src/db/crudExperts.js');
+=======
+const { getLicenciasByQuery } = require('../db/crudLicencias.js');
+const dbL = require('../db/crudLicencias.js');
+>>>>>>> 3214ebacc352e1897fce941050a1bdad12aa0b23
 
 // consulta varios atributos
-router.get('/', (req, res) => {
+router.get('/atr', (req, res) => {
     const { noacto, matriculainmobiliaria, cedcatastrales, uso } = req.body;
     getLicenciasByQuery(noacto, matriculainmobiliaria, cedcatastrales, uso, licencias => {
         res.json(licencias);
@@ -13,12 +18,14 @@ router.get('/', (req, res) => {
 
 //consultas tipicas http
 router.get('/', function (req, res) {
+    console.log("get all");
     dbL.getLicencias(function (arrayLicencias) {
         res.send(arrayLicencias);
     });
 });
 
 router.get('/:id', function (req, res) {
+    console.log("get one");
     const lid = req.params.id;
     dbL.getLicencia(lid, function (license) {
         res.json(license);
@@ -74,7 +81,7 @@ router.patch('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const lid = req.params.id;
-    dbL.deleteAdmin(lid, function (response) {
+    dbL.deleteLicencia(lid, function (response) {
         res.send(response);
     });
 });
