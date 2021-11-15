@@ -12,7 +12,7 @@ const db = require('./Conection.js');
 
 //Get all licences from licence collection
 function getLicencias(callback) {
-  return db.collection('Licencia').get()
+  return db.collection('License').get()
       .then((refDoc) => {
           var arrayLicencias = [];
           refDoc.forEach((doc) => {
@@ -26,7 +26,7 @@ function getLicencias(callback) {
 }
 
 function getLicencia(lid, callback) {
-  return db.collection('Licencia').doc(lid).get()
+  return db.collection('License').doc(lid).get()
       .then((doc) => {
           callback(doc.data());
       })
@@ -36,7 +36,7 @@ function getLicencia(lid, callback) {
 }
 
 function addLicencia(licencia, callback) {
-  return db.collection('Licencia').add(licencia)
+  return db.collection('License').add(licencia)
       .then(() => {
           callback("License created");
       })
@@ -46,7 +46,7 @@ function addLicencia(licencia, callback) {
 }
 
 function updateLicenciaTotally(lid, licencia, callback) {
-  return db.collection('Licencia').doc(lid).set(licencia)
+  return db.collection('License').doc(lid).set(licencia)
       .then(() => {
           callback("Success");
       })
@@ -56,7 +56,7 @@ function updateLicenciaTotally(lid, licencia, callback) {
 }
 
 function updateLicenciaPartial(lid, licencia, callback) {
-  return db.collection('Licencia').doc(lid).update(licencia)
+  return db.collection('License').doc(lid).update(licencia)
       .then(() => {
           callback("Success");
       })
@@ -66,7 +66,7 @@ function updateLicenciaPartial(lid, licencia, callback) {
 }
 
 function deleteLicencia(lid, callback) {
-  return db.collection('Licencia').doc(lid).delete()
+  return db.collection('License').doc(lid).delete()
       .then(() => {
           callback("Success");
       })
@@ -78,7 +78,7 @@ function deleteLicencia(lid, callback) {
 
 //consulta de licencias por noacto, matriculainmobiliaria, cedcatastrales y uso
 function getLicenciasByQuery(noacto, matriculainmobiliaria, cedcatastrales, uso, callback) {
-    return db.collection('Licencia').where('noacto', '==', noacto).where('matriculainmobiliaria', '==', matriculainmobiliaria).where('cedcatastrales', '==', cedcatastrales).where('uso', '==', uso).get()
+    return db.collection('License').where('noacto', '==', noacto).where('matriculainmobiliaria', '==', matriculainmobiliaria).where('cedcatastrales', '==', cedcatastrales).where('uso', '==', uso).get()
         .then((refDoc) => {
             var arrayLicencias = [];
             refDoc.forEach((doc) => {
@@ -96,7 +96,7 @@ function getLicenciasByQuery(noacto, matriculainmobiliaria, cedcatastrales, uso,
 
 function consultaLicenciasPorParametro(tipo, callback) {
         if (tipo == "tipo") {
-            return db.collection('Licencia').where('tipo', '==', tipo).get()
+            return db.collection('License').where('tipo', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -109,7 +109,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "noacto") {
-            return db.collection('Licencia').where('noacto', '==', tipo).get()
+            return db.collection('License').where('noacto', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -122,7 +122,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "barrio_urb") {
-            return db.collection('Licencia').where('barrio_urb', '==', tipo).get()
+            return db.collection('License').where('barrio_urb', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -135,7 +135,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "cedcatastrales") {
-            return db.collection('Licencia').where('cedcatastrales', '==', tipo).get()
+            return db.collection('License').where('cedcatastrales', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -148,7 +148,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "noacto") {
-            return db.collection('Licencia').where('noacto', '==', tipo).get()
+            return db.collection('License').where('noacto', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -161,7 +161,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "fecha") {
-            return db.collection('Licencia').where('fecha', '==', tipo).get()
+            return db.collection('License').where('fecha', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -174,7 +174,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "matriculainmobiliaria") {
-            return db.collection('Licencia').where('matriculainmobiliaria', '==', tipo).get()
+            return db.collection('License').where('matriculainmobiliaria', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -187,7 +187,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "areapredio") {
-            return db.collection('Licencia').where('areapredio', '==', tipo).get()
+            return db.collection('License').where('areapredio', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
@@ -200,7 +200,7 @@ function consultaLicenciasPorParametro(tipo, callback) {
                 });
         }
         if (tipo == "aconstruir") {
-            return db.collection('Licencia').where('aconstruir', '==', tipo).get()
+            return db.collection('License').where('aconstruir', '==', tipo).get()
                 .then((refDoc) => {
                     var arrayLicencias = [];
                     refDoc.forEach((doc) => {
