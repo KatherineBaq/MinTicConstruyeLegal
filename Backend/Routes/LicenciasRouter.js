@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getLicenciasByQuery } = require('../db/crudLicencias');
-const dbL = require('../src/db/crudExperts.js');
+//const dbL = require('../src/db/crudExperts.js');
 
 // consulta varios atributos
 router.get('/', (req, res) => {
@@ -15,22 +15,22 @@ router.get('/', (req, res) => {
 router.get('/', function (req, res) {
     dbL.getLicencias(function (arrayLicencias) {
         res.send(arrayLicencias);
-    })
+    });
 });
 
 router.get('/:id', function (req, res) {
     const lid = req.params.id;
     dbL.getLicencia(lid, function (license) {
         res.json(license);
-    })
-})
+    });
+});
 
 router.post('/', (req, res) => {
     const license = req.body;
     dbL.addLicencia(license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 
 // To get data from an open API
@@ -61,22 +61,22 @@ router.put('/:id', (req, res) => {
     const license = req.body;
     dbL.updateLicenciaTotally(lid, license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 router.patch('/:id', (req, res) => {
     const lid = req.params.id;
     const license = req.body;
     dbL.updateLicenciaPartial(lid, license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 router.delete('/:id', (req, res) => {
     const lid = req.params.id;
     dbL.deleteAdmin(lid, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 module.exports = router;
