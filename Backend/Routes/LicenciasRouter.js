@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
-<<<<<<< HEAD
-const { getLicenciasByQuery } = require('../db/crudLicencias');
-//const dbL = require('../src/db/crudExperts.js');
-=======
 const { getLicenciasByQuery } = require('../db/crudLicencias.js');
 const dbL = require('../db/crudLicencias.js');
->>>>>>> 3214ebacc352e1897fce941050a1bdad12aa0b23
 
 // consulta varios atributos
 router.get('/atr', (req, res) => {
