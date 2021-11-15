@@ -43,6 +43,7 @@ module.exports = {
     backgroundImage: {
       searchIcon: "url('/src/assets/searchIcon.svg')",
       optionsSearch: "url('./src/assets/optionsSearch.svg')",
+      Login: "url('./src/assets/bgLogin.png')",
     },
   },
   variants: {

@@ -1,8 +1,6 @@
 import Layout from "../Layout";
 
 import Licencia from "../../components/Main/Licence/Licence";
-import Boton from "../../components/Main/Search/Boton/Boton";
-import Input from "../../components/Main/Search/Input/Input";
 import licencia from "../../Data.json";
 import Seeker from "../../components/Main/Search/Seeker";
 
