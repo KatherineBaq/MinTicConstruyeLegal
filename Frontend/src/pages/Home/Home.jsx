@@ -1,11 +1,13 @@
 import Nav from "../../components/Header/Nav/Nav";
-import Buscador from "../../components/Main/Buscador/Buscador";
+import Boton from "../../components/Main/Buscador/Boton/Boton";
+import Input from "../../components/Main/Buscador/Input/Input";
 
 const Home = () => {
   return (
     <>
       <Nav />
-      <Buscador />
+      <Input placeholder="hola" />
+      <Boton text="buscar"/>
     </>
   );
 };
