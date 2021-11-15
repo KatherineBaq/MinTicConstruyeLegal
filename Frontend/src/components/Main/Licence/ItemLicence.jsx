@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemLicencia = ({ fieldName, value }) => {
+const ItemLicence = ({ fieldName, value }) => {
   return (
     <>
       <h3 className="px-4 text-center pb-2 text-sm">
@@ -11,4 +11,4 @@ const ItemLicencia = ({ fieldName, value }) => {
   );
 };
 
-export default ItemLicencia;
+export default ItemLicence;

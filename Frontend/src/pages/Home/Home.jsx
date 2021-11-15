@@ -1,14 +1,22 @@
-import Nav from "../../components/Header/Nav/Nav";
-import Buscador from "../../components/Main/Buscador/Buscador";
-import Licencia from "../../components/Main/Licencia/Licencia";
+import Layout from "../Layout";
+
+import Licencia from "../../components/Main/Licence/Licence";
+import Boton from "../../components/Main/Search/Boton/Boton";
+import Input from "../../components/Main/Search/Input/Input";
+import licencia from "../../Data.json";
+import Seeker from "../../components/Main/Search/Seeker";
+
 const Home = () => {
   return (
     <>
-      <Nav />
-      <Buscador />
-      <Licencia licencia={licencia[1]} />
-      <Licencia licencia={licencia[1]} />
-      <Licencia licencia={licencia[1]} />
+      <Layout>
+        <Seeker />
+        <section>
+          <Licencia licencia={licencia[1]} />
+          <Licencia licencia={licencia[0]} />
+          <Licencia licencia={licencia[1]} />
+        </section>
+      </Layout>
     </>
   );
 };
