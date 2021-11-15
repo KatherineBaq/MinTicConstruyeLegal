@@ -1,17 +1,12 @@
-import Header from "./components/Header/Header";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Main from "./components/Main/Main";
+import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route>
-          <Main />
-        </Route>
-      </Switch>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={"login"} />
+    </Routes>
   );
 };
 
