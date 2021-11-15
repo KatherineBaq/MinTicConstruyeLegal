@@ -74,7 +74,7 @@ router.patch('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const lid = req.params.id;
-    dbL.deleteAdmin(lid, function (response) {
+    dbL.deleteLicencia(lid, function (response) {
         res.send(response);
     })
 })
