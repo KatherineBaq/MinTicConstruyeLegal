@@ -4,7 +4,7 @@ const routerAdmins = require('./AdministradorRouter.js');
 
 function APIRoutes(app){
     app.use('/licenses', routerLicenses);
-    app.use('/admins', routerUser);
+    app.use('/admins', routerAdmins);
     //app.use('/mock/experts', routerMockExperts);    
 }
 
