@@ -1,6 +1,6 @@
 const express = require('express');
 const debug = require('debug')('app:main');
-const APIRoutes = require('./Routes/indexRoutes.js')
+const APIRoutes = require('./Routes/indexRoutes.js');
 const app = express();
 const port = 3000;
 

@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
     console.log("get all");
     dbL.getLicencias(function (arrayLicencias) {
         res.send(arrayLicencias);
-    })
+    });
 });
 
 router.get('/:id', function (req, res) {
@@ -24,15 +24,15 @@ router.get('/:id', function (req, res) {
     const lid = req.params.id;
     dbL.getLicencia(lid, function (license) {
         res.json(license);
-    })
-})
+    });
+});
 
 router.post('/', (req, res) => {
     const license = req.body;
     dbL.addLicencia(license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 
 // To get data from an open API
@@ -63,22 +63,22 @@ router.put('/:id', (req, res) => {
     const license = req.body;
     dbL.updateLicenciaTotally(lid, license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 router.patch('/:id', (req, res) => {
     const lid = req.params.id;
     const license = req.body;
     dbL.updateLicenciaPartial(lid, license, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 router.delete('/:id', (req, res) => {
     const lid = req.params.id;
     dbL.deleteLicencia(lid, function (response) {
         res.send(response);
-    })
-})
+    });
+});
 
 module.exports = router;
