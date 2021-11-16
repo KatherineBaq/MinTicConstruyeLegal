@@ -1,6 +1,4 @@
 const express = require("express");
-const debug = require("debug")("app:main");
-const APIRoutes = require("./routes");
 const app = express();
 const licenceRouter = require("./licenceRouter.js");
 
