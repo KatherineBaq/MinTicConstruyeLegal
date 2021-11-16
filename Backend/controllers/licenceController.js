@@ -1,6 +1,6 @@
 const db = require("../db/Conection");
 const getLicenseByQuery = require("../utils/getLicenseByQuery");
-const deleteLicense = requiere("../utils/deleteLicense.js");
+const deleteLicense = require("../utils/deleteLicense.js");
 const getLinceseByCatastral = require("../utils/getLicenseByCatastral");
 const getAllLicense = require("../utils/getAllLicense");
 

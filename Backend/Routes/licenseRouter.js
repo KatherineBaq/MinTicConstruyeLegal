@@ -1,5 +1,6 @@
 const express = require("express");
-const router = express.Router();
+const licenseRouter = express.Router();
+
 const {
   searchController,
   getAllController,
@@ -8,13 +9,13 @@ const {
 } = require("../controllers/licenceController");
 
 //all
-router.get("/", getAllController);
+licenseRouter.get("/", getAllController);
 
 // consulta varios atributos
-router.get("/search", searchController);
+licenseRouter.get("/search", searchController);
 
 //consultas tipicas http
-router.post("/", createLicenseController);
+licenseRouter.post("/", createLicenseController);
 
 // router.put("/:id", (req, res) => {
 //   const lid = req.params.id;
@@ -32,6 +33,6 @@ router.post("/", createLicenseController);
 //   });
 // });
 
-router.delete("/:catastral", deleteLicenseController);
+licenseRouter.delete("/:catastral", deleteLicenseController);
 
-module.exports = router;
+module.exports = licenseRouter;

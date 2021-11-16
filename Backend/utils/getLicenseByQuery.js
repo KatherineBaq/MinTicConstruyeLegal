@@ -1,11 +1,21 @@
 const db = require("../db/Conection");
 
-exports.modules = function getLicenseByQuery(query, callback) {
+module.exports = function getLicenseByQuery(query, callback) {
   let whereRef;
-  let collecRef = db.collection("Licencia");
+  let collecRef = db.collection("Licence");
+  let isFirst = true;
+
+  console.log(query);
 
   for (const [key, value] of Object.entries(query)) {
-    whereRef = collecRef.where(key, "==", value);
+    console.log(key, value);
+    if (isFirst) {
+      whereRef = collecRef.where(key, "==", value);
+    }
+    if (!isFirst) {
+      whereRef = whereRef.where(key, "==", value);
+    }
+    isFirst = false;
   }
 
   return whereRef

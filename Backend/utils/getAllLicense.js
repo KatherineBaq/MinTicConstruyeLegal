@@ -1,8 +1,8 @@
 const db = require("../db/Conection");
 
-exports.modules = getAllLicense = () => {
+module.exports = getAllLicense = (callback) => {
   return db
-    .collection("License")
+    .collection("Licence")
     .get()
     .then((refDoc) => {
       var arrayLicencias = [];

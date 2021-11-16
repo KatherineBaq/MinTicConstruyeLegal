@@ -20,6 +20,11 @@ media
 *.py[cod]
 *$py.class
 
+#firebase
+
+firebaseConfig.json
+
+
 # C extensions
 *.so
 

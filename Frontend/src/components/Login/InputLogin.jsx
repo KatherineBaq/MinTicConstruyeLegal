@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InputLogin = ({ textField, img, placeholder }) => {
+const InputLogin = ({ textField, img, placeholder, register, label, type }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -14,8 +14,9 @@ const InputLogin = ({ textField, img, placeholder }) => {
         <h3 className="p-1">{textField}</h3>
       </div>
       <input
+        {...register(label)}
         className="w-full h-auto bg-transparent pl-4"
-        type="text"
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}

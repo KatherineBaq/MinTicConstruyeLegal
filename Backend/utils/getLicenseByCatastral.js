@@ -1,9 +1,9 @@
 const db = require("../db/Conection");
 
-exports.modules = async function getLicenseByCatastral(catastral, callback) {
+module.exports = async function getLicenseByCatastral(catastral, callback) {
   try {
     const doc = await db
-      .collection("License")
+      .collection("Licence")
       .where("cedcatastral", "==", catastral)
       .get();
 
